@@ -1,11 +1,17 @@
 ## Evidence
 
+aws ec2 describe-instances \
+ --filters Name=tag:Name,Values=oyd-exercise-3-1-dev-ec2-instance \
+ --query 'Reservations[*].Instances[*].[InstanceId,State.Name,PublicIpAddress]' \
+ --output table > infra/evidence/instance.txt
+
+```text
 ----------------------------------------------------
 |                 DescribeInstances                |
 +----------------------+----------+----------------+
 |  i-05061a8ce714f4449 |  running |  35.93.15.196  |
 +----------------------+----------+----------------+
-
+```
 
 ## API Tests
 
