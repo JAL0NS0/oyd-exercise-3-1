@@ -22,6 +22,7 @@ variable "ami_id" {
 variable "instance_type" {
   description = "Type of EC2 instance"
   type        = string
+  default     = "t3.micro"
 }
 
 variable "allowed_cidr_blocks" {
