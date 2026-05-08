@@ -63,9 +63,9 @@ resource "aws_instance" "this" {
         COMPUTE_TYPE=ec2 nohup ruby /opt/server.rb &
     EOF
 
-    tags = {
-      Name        = "${var.name}-${var.environment}-ec2-instance"
-      Environment = var.environment
-    }
+  tags = {
+    Name        = "${var.name}-${var.environment}-ec2-instance"
+    Environment = var.environment
+  }
 }
 
